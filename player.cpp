@@ -17,12 +17,12 @@ Player createPlayer(float a_x, char a_up, char a_down)
 
 void drawPlayer(const Player &p)
 {
-	drawLine(p.x, p.y, p.x, p.y + p.size, RED);
+	drawLine(p.x, p.y, p.x, p.y + p.size,BLUE);
 }
 
 void drawPlayer2(const Player &p)
 {
-	drawLine(p.x, p.y, p.x, p.y + p.size, BLUE);
+	drawLine(p.x, p.y, p.x, p.y + p.size, BLACK);
 }
 
 void updatePlayer(Player &p)
