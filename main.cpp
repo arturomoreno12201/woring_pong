@@ -8,6 +8,11 @@
 #include "Player.h"
 #include "Ball.h"
 #include "GameState.h"
+#include "constdecl.h"
+
+#include "SplashScreen.h"
+#include "Depart.h"
+#include "options.h"
 
 using namespace sfw;
 
@@ -19,17 +24,19 @@ int main()
 
 	GameState gs;
 
-	gs.init ();
 
+	gs.init ();
+	gs.print();
 	
 	while (stepContext())
 	{		
 
 		gs.draw();
 		gs.update();
-		gs.print();
+	
 
 	}
+	
 	termContext();
 
 }

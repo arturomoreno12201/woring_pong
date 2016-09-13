@@ -1,0 +1,15 @@
+#pragma once
+
+enum APP_STATE
+{
+
+	TEMINATE,
+
+	ENTER_SPLASH, SPLASH,
+
+	ENTER_OPTION, OPTIONS,
+
+	ENTER_GAME, GAME,
+
+
+};

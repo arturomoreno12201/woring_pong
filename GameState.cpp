@@ -13,10 +13,10 @@
 void GameState::init()
 {
 	
-	player1.init (10, 'W', 'S');
-	player2.init (790, 'I', 'K');
-	ball.init(400, 290, 100, 100, 10, 30);
-	roll.init(20,20,20,20,20,20,20,20);
+	player1.init (30, 'W', 'S');
+	player2.init (770, 'I', 'K');
+	ball.init(400, 290, 100, 100, 10, 35);
+	roll.init(1,20);
 
 	font = loadTextureMap("./res/fontmap.png", 16, 16);
 	printf("pass 1");
