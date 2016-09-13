@@ -8,6 +8,7 @@
 #include "sfwdraw.h"
 #include "Player.h"
 #include "Ball.h"
+#include "stats.h"
 
 
 
@@ -17,6 +18,7 @@ class GameState
 
 	 Player player1, player2;
 	 Ball ball;
+	 roll roll;
 public:
 	float topBoundary, bottomBoundary;
 
@@ -26,6 +28,7 @@ public:
 	void init();
 	void draw() const;
 	void update();
+	void print();
 };
 
 

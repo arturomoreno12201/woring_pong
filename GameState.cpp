@@ -8,6 +8,7 @@
 #include "Player.h"
 #include "Ball.h"
 #include "GameState.h"
+#include "stats.h"
 
 void GameState::init()
 {
@@ -15,6 +16,7 @@ void GameState::init()
 	player1.init (10, 'W', 'S');
 	player2.init (790, 'I', 'K');
 	ball.init(400, 290, 100, 100, 10, 30);
+	roll.init(20,20,20,20,20,20,20,20);
 
 	font = loadTextureMap("./res/fontmap.png", 16, 16);
 	printf("pass 1");
@@ -29,6 +31,12 @@ void GameState::draw() const
 	//printf("pass 2");
 }
 
+void GameState::print() 
+{
+
+	roll.print();
+
+}
 // should call update and collision related function
 // also check for anything else that isn't
 // part of any of our structs.
@@ -37,7 +45,7 @@ void GameState::update()
 	ball.update();
 	player1.update();
 	player2.update();
-
+	roll.update();
 
 
 	if (ball.xpos < player1.x && ball.ypos > player1.y && ball.ypos < player1.y + player1.size)

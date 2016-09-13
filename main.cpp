@@ -27,7 +27,7 @@ int main()
 
 		gs.draw();
 		gs.update();
-	
+		gs.print();
 
 	}
 	termContext();
