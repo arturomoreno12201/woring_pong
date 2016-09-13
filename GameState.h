@@ -9,21 +9,34 @@
 #include "Player.h"
 #include "Ball.h"
 
-// Move variables into a big game state struct.
-struct GameState
-{
-	Player player1, player2;
-	Ball ball;
 
+
+// Move variables into a big game state struct.
+class GameState
+{
+
+	 Player player1, player2;
+	 Ball ball;
+public:
 	float topBoundary, bottomBoundary;
 
 	int p1score, p2score;
 
 	unsigned font;
+	void init();
+	void draw() const;
+	void update();
 };
 
+
+
+
+
+
+
+
 // Set up the starting values for everything.
-GameState createGameState()
+/*GameState createGameState()
 {
 	GameState state;
 
@@ -69,4 +82,4 @@ void updateGameState(GameState &gs)
 		b.xvel -= 50;
 		b.yvel -= 50;
 	}
-}
+}*/
