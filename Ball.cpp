@@ -37,7 +37,7 @@ void Ball::update()
 		yvel *= -1;
 	}
 
-	if (ypos > 600)
+	if (ypos > 300)
 	{
 		yvel *= -1;
 		

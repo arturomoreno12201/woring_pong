@@ -1,18 +1,17 @@
 #pragma once
 #include "constdecl.h"
-
-class Option
+class Game 
 {
 
-	int font;
-	float timer;
-	int select;
+	 int font;
+	 int timer;
+	 int select;
 public:
 	void init(int a_font);
-
 	void play();
+	
 	void draw();
-	void step();
+	
 
 	APP_STATE next();
 

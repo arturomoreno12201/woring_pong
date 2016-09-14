@@ -1,19 +1,21 @@
 #pragma once
 #include "constdecl.h"
 
-class Option
+class terminate 
 {
 
 	int font;
 	float timer;
-	int select;
 public:
+	//start up
 	void init(int a_font);
-
-	void play();
+	//activation
+	void playe();
+	//update
 	void draw();
 	void step();
 
 	APP_STATE next();
+
 
 };

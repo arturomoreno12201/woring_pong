@@ -10,7 +10,7 @@ public:
 	//start up
 	void init(int a_font);
 	//activation
-	void player();
+	void play();
 	//update
 	void draw();
 	void step();
