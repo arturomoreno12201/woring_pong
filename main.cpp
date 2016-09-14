@@ -58,11 +58,11 @@ int main()
 			state = splash.next();
 
 			break;
-
+	
 		case GAME:
 				gs.draw();
 				gs.update();
-				state = game.next();
+				
 			break;
 
 

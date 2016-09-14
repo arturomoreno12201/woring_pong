@@ -29,7 +29,7 @@ APP_STATE Option::next()
 {
 	if (sfw::getKey('S')) return ENTER_SPLASH;
 	if (sfw::getKey('D')) return ENTER_DEPART;
-	if (sfw::getKey('U')) return ENTER_GAME;
+	if (sfw::getKey('U')) return GAME;
 
 	if (sfw::getKey(KEY_ENTER))
 	{
