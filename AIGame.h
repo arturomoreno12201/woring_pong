@@ -13,7 +13,7 @@
 #include "ai.h"
 #include "InBetween.h"
 #include "randLines.h"
-#include "Line.h"
+
 
 class AIgame 
 {
@@ -21,7 +21,7 @@ class AIgame
 	AI ai,ai2;
 	Ball ball;
 	roll roll;
-	Line line;
+
 
 
 public:

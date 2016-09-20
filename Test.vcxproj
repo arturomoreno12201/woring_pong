@@ -132,7 +132,6 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="InBe2.cpp" />
     <ClCompile Include="InBetween.cpp" />
-    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="options.cpp" />
     <ClCompile Include="player.cpp" />
@@ -150,7 +149,6 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="InBe2.h" />
     <ClInclude Include="InBetween.h" />
-    <ClInclude Include="Line.h" />
     <ClInclude Include="options.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SplashScreen.h" />

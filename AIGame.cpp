@@ -9,7 +9,7 @@ void AIgame::init()
 	time = 60.0f;
 	ai.init(770);
 	ai2.init(30);
-	line.init(400,30);
+	
 	ball.init(400, 300, 100, 100, 10, 35,0,0);
 	roll.init(1, 20);
 	font = loadTextureMap("./res/fontmap.png", 16, 16);
@@ -22,7 +22,7 @@ void AIgame::draw() const
 	ai.draw();
 	ai2.draw();
 	ball.draw();
-	line.draw();
+	
 	
 	char buffer[80];
 	sprintf_s(buffer, "Time: %f", time);
@@ -75,15 +75,5 @@ void AIgame::update()
 		ball.yvel -= 50;
 	}
 	
-	line.update();
-	if (ball.xpos > line.x && ball.ypos > line.y && ball.ypos < line.y + line.size || ball.xpos < ai2.x && ball.ypos > ai2.y && ball.ypos < ai2.y + ai2.size)
-	{
-		ball.xvel *= -1;
-		ball.xpos = line.x;
-		ball.xvel -= 10;
-		ball.yvel -= 10;
-		ball.xvel += 10;
-		ball.yvel += 10;
-	}
 
 }
