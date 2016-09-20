@@ -125,10 +125,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ai.cpp" />
+    <ClCompile Include="AIGame.cpp" />
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Depart.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="InBe2.cpp" />
+    <ClCompile Include="InBetween.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="options.cpp" />
     <ClCompile Include="player.cpp" />
@@ -138,11 +142,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ai.h" />
+    <ClInclude Include="AIGame.h" />
     <ClInclude Include="Ball.h" />
     <ClInclude Include="constdecl.h" />
     <ClInclude Include="Depart.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="InBe2.h" />
+    <ClInclude Include="InBetween.h" />
+    <ClInclude Include="Line.h" />
     <ClInclude Include="options.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SplashScreen.h" />

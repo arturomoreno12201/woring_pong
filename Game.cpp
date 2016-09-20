@@ -17,7 +17,7 @@ void Game::init()
 	time = 60.0f;
 	player1.init(30, 'W', 'S');
 	ai.init(770);
-	ball.init(400, 290, 100, 100, 10, 35);
+	ball.init(400, 290, 100, 100, 10, 35,0,0);
 	roll.init(1, 20);
 
 	font = loadTextureMap("./res/fontmap.png", 16, 16);
@@ -50,7 +50,7 @@ APP_STATE Game::next()
 
 	if (time <= 0.0f)
 	{
-		return ENTER_GAME2;
+		return ENTER_INBE1;
 	}
 
 	return GAME1;

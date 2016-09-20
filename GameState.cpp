@@ -11,16 +11,19 @@
 #include "stats.h"
 #include "ai.h"
 
+
+
 void GameState::init()
 {
 	
 	time = 60.0f;
 	player1.init (30, 'W', 'S');
 	ai.init(770);
-	ball.init(400, 290, 100, 100, 10, 35);
-	roll.init(1,20);
+	ball.init(400, 290, 100, 100, 10, 35,0,0);
 
+	roll.init(1,20);
 	font = loadTextureMap("./res/fontmap.png", 16, 16);
+	
 	//kiwljujprintf("pass 1");
 	
 }
@@ -30,12 +33,12 @@ void GameState::draw() const
 	ai.draw();
 	ball.draw();
 	player1.draw();
-	
+
 
 	char buffer[80];
 	sprintf_s(buffer, "Time: %f", time);
 	sfw::drawString(font, buffer, 270, 570, 16, 16);
-
+	
 	//printf("pass 2");
 }
 
@@ -59,12 +62,13 @@ APP_STATE GameState::next()
 // also check for anything else that isn't
 // part of any of our structs.
 void GameState::update()
+
 {
 	time -= sfw::getDeltaTime();
 	
 	ball.update();
 	player1.update();
-	
+
 	roll.update();
 	ai.update(ball);
 
@@ -83,6 +87,7 @@ void GameState::update()
 		ball.xvel += 50;
 		ball.yvel += 50;
 	}
+	
 
 	
 	//printf("pass 3");

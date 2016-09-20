@@ -3,7 +3,7 @@
 #include <cstdio>
 void Splash::init(int a_font) { font = a_font; }
 
-void Splash::play() { timer = 3.f; }
+void Splash::play() { timer = 2.f; }
 
 void Splash::draw()
 {

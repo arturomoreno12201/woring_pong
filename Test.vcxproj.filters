@@ -48,6 +48,18 @@
     <ClCompile Include="ai.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AIGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InBetween.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InBe2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -81,6 +93,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ai.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AIGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InBetween.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InBe2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

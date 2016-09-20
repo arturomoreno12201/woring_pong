@@ -2,6 +2,7 @@
 #include "sfwdraw.h"
 #include "Ball.h"
 #include <time.h>
+using namespace sfw;
 void AI::init(float a_x)
 {
 
@@ -15,7 +16,7 @@ void AI::init(float a_x)
 
 void AI::draw() const
 {
-	drawLine(x, y, x, y + size, WHITE);
+	drawLine(x, y, x, y + size, RED);
 }
 
 void AI::update(const Ball &ball)

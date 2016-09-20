@@ -18,6 +18,7 @@
 class GameState
 {
 	 AI ai;
+	
 	 Player player1;
 	 Ball ball;
 	 roll roll;

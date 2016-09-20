@@ -2,11 +2,10 @@
 #include "Ball.h"
 #include <time.h>
 
-int score1 = 0;
-int score2 = 0;
 
 
-void Ball::init(float b_xpos, float b_ypos, float b_xvel, float b_yvel, float b_rad, unsigned b_steps)
+
+void Ball::init(float b_xpos, float b_ypos, float b_xvel, float b_yvel, float b_rad, unsigned b_steps,int a_score1, int a_score2)
 {
 
 	xpos = b_xpos;
@@ -15,17 +14,24 @@ void Ball::init(float b_xpos, float b_ypos, float b_xvel, float b_yvel, float b_
 	yvel = b_yvel;
 	radius = b_rad;
 	steps = b_steps;
-
+	score1 = a_score1;
+	score2 = a_score2;
+	font = loadTextureMap("./res/fontmap.png", 16, 16);
 }
+
+
 
 void Ball::draw() const
 {
-	drawCircle(xpos, ypos, radius, steps, YELLOW);
+	
+	drawCircle(xpos, ypos, radius, steps, BLUE);
+	drawString(font, std::to_string(score1).c_str(), 0, 580, 40, 40, '\0');
+	drawString(font, std::to_string(score2).c_str(), 755, 580, 40, 40, '\0');
 }
 
 void Ball::update() 
 {
-	unsigned d = loadTextureMap("./res/fontmap.png", 16, 16);
+
 	
 	
 	
@@ -64,11 +70,15 @@ void Ball::update()
 
 		xvel = rand() % 1000 - 1010;
 		yvel = rand() % 1000 - 1010;
-	
+
 		++score1;
 		//printf("left");
 	}
-	drawString(d, std::to_string(score1).c_str(), 0, 580, 40, 40, '\0');
-	drawString(d, std::to_string(score2).c_str(), 755, 580, 40, 40, '\0');
-}
+
+
+
+
+	}
+	;
+
 
