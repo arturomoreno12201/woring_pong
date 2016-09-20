@@ -3,16 +3,22 @@
 class Game 
 {
 
-	 int font;
-	 int timer;
-	 int select;
-public:
-	void init(int a_font);
-	void play();
-	
-	void draw();
-	
+	AI ai;
+	Player player1;
+	Ball ball;
+	roll roll;
 
+public:
+	float topBoundary, bottomBoundary;
+	float time;
+
+	int p1score, p2score;
+
+	unsigned font;
+	void init();
+	void draw() const;
+	void update();
+	void print();
 	APP_STATE next();
 
 };

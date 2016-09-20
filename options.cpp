@@ -1,35 +1,43 @@
 #include "options.h"
 #include "sfwdraw.h"
 #include <cstdio>
-
+#include "GameState.h"
 void Option::init(int a_font) { font = a_font; }
 void Option::play() { select = 0; timer = 1.f; }
 
 void Option::draw()
 {
-	sfw::drawString(font, "Press enter on the selection:", 80, 140, 16, 16, 0, 0, WHITE);
+	sfw::drawString(font, "PONG?", 230, 360, 90, 60, 0, 0, select == 3 ? MAGENTA : WHITE);
 
-	sfw::drawString(font, "GOTO (S)plash!", 100, 120, 16, 16, 0, 0, select == 1 ? MAGENTA : WHITE);
-	sfw::drawString(font, "GOTO (D)epart!", 100, 100, 16, 16, 0, 0, select == 0 ? MAGENTA : WHITE);
+	sfw::drawString(font, "playe the game by presing (P)", 100, 120, 16, 16, 0, 0, select == 1 ? MAGENTA : WHITE);
+	sfw::drawString(font, "leave the gameby presing (D)", 100, 100, 16, 16, 0, 0, select == 0 ? RED : WHITE);
 
-	sfw::drawLine(100, 80, 100 + 240 * (timer / 1.f), 80);
 }
 
 void Option::step()
 {
+	
 	timer -= sfw::getDeltaTime();
 	if (timer < 0)
 	{
 		timer = 1.f;
 		select = 1 - select; // flip selection between 0 and 1
 	}
+	timer -= sfw::getDeltaTime();
+	if (timer < 0)
+	{
+		timer = 1.f;
+		select = 3 - select; // flip selection between 0 and 1
+	}
+
 }
 
 APP_STATE Option::next()
 {
-	if (sfw::getKey('S')) return ENTER_SPLASH;
+	GameState gs;
 	if (sfw::getKey('D')) return ENTER_DEPART;
-	if (sfw::getKey('U')) return GAME;
+	if (sfw::getKey('P'))  return ENTER_GAME1;
+
 
 	if (sfw::getKey(KEY_ENTER))
 	{

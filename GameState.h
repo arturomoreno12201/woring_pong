@@ -9,18 +9,22 @@
 #include "Player.h"
 #include "Ball.h"
 #include "stats.h"
+#include "constdecl.h"
+#include "ai.h"
 
 
 
 // Move variables into a big game state struct.
 class GameState
 {
-
-	 Player player1, player2;
+	 AI ai;
+	 Player player1;
 	 Ball ball;
 	 roll roll;
+	
 public:
 	float topBoundary, bottomBoundary;
+	float time;
 
 	int p1score, p2score;
 
@@ -29,6 +33,7 @@ public:
 	void draw() const;
 	void update();
 	void print();
+	APP_STATE next();
 };
 
 

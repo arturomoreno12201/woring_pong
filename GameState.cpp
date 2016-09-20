@@ -9,25 +9,33 @@
 #include "Ball.h"
 #include "GameState.h"
 #include "stats.h"
+#include "ai.h"
 
 void GameState::init()
 {
 	
+	time = 60.0f;
 	player1.init (30, 'W', 'S');
-	player2.init (770, 'I', 'K');
+	ai.init(770);
 	ball.init(400, 290, 100, 100, 10, 35);
 	roll.init(1,20);
 
 	font = loadTextureMap("./res/fontmap.png", 16, 16);
-	printf("pass 1");
+	//kiwljujprintf("pass 1");
 	
 }
 
 void GameState::draw() const
 {
+	ai.draw();
 	ball.draw();
 	player1.draw();
-	player2.draw();
+	
+
+	char buffer[80];
+	sprintf_s(buffer, "Time: %f", time);
+	sfw::drawString(font, buffer, 270, 570, 16, 16);
+
 	//printf("pass 2");
 }
 
@@ -37,16 +45,36 @@ void GameState::print()
 	roll.print();
 
 }
+APP_STATE GameState::next()
+{
+
+	if (time <= 0.0f)
+	{
+		return ENTER_OPTION;
+	}
+	
+	return GAME2;
+}
 // should call update and collision related function
 // also check for anything else that isn't
 // part of any of our structs.
 void GameState::update()
 {
+	time -= sfw::getDeltaTime();
+	
 	ball.update();
 	player1.update();
-	player2.update();
+	
 	roll.update();
+	ai.update(ball);
 
+	if (ball.xpos > ai.x && ball.ypos > ai.y && ball.ypos < ai.y + ai.size)
+	{
+		ball.xvel *= -1;
+		ball.xpos = ai.x;
+		ball.xvel -= 50;
+		ball.yvel -= 50;
+	}
 
 	if (ball.xpos < player1.x && ball.ypos > player1.y && ball.ypos < player1.y + player1.size)
 	{
@@ -56,12 +84,6 @@ void GameState::update()
 		ball.yvel += 50;
 	}
 
-	if (ball.xpos > player2.x && ball.ypos > player2.y && ball.ypos < player2.y + player2.size)
-	{
-		ball.xvel *= -1;
-		ball.xpos = player2.x;
-		ball.xvel -= 50;
-		ball.yvel -= 50;
-	}
+	
 	//printf("pass 3");
 }

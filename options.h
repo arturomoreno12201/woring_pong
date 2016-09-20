@@ -1,5 +1,6 @@
 #pragma once
 #include "constdecl.h"
+#include "GameState.h"
 
 class Option
 {

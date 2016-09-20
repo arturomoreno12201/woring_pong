@@ -5,6 +5,7 @@
 int score1 = 0;
 int score2 = 0;
 
+
 void Ball::init(float b_xpos, float b_ypos, float b_xvel, float b_yvel, float b_rad, unsigned b_steps)
 {
 
@@ -27,7 +28,7 @@ void Ball::update()
 	unsigned d = loadTextureMap("./res/fontmap.png", 16, 16);
 	
 	
-	srand(time(NULL));
+	
 
 	xpos += xvel * getDeltaTime();
 	ypos += yvel * getDeltaTime();
@@ -37,7 +38,7 @@ void Ball::update()
 		yvel *= -1;
 	}
 
-	if (ypos > 300)
+	if (ypos > 600)
 	{
 		yvel *= -1;
 		
@@ -49,10 +50,10 @@ void Ball::update()
 		xpos = 400;
 		ypos = 300;
 
-		xvel = rand() % 1000 - 101;
-		yvel = rand() % 1000 - 101;
-		std::cout << "Score: " << ++score2 << std::endl;
-		printf("right");
+		xvel = rand() % 1000 - 10;
+		yvel = rand() % 1000 - 10;
+		 ++score2;
+		//printf("right");
 	}
 	//left
 	if (xpos > 800)
@@ -61,11 +62,11 @@ void Ball::update()
 		xpos = 400;
 		ypos = 300;
 
-		xvel = rand() % 1000 - 101;
-		yvel = rand() % 1000 - 101;
+		xvel = rand() % 1000 - 1010;
+		yvel = rand() % 1000 - 1010;
 	
-		std::cout << "Score: " << ++score1 << std::endl;
-		printf("left");
+		++score1;
+		//printf("left");
 	}
 	drawString(d, std::to_string(score1).c_str(), 0, 580, 40, 40, '\0');
 	drawString(d, std::to_string(score2).c_str(), 755, 580, 40, 40, '\0');

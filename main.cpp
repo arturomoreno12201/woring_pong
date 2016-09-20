@@ -14,6 +14,7 @@
 #include "Depart.h"
 #include "options.h"
 #include "constdecl.h"
+#include <time.h>
 using namespace sfw;
 
 
@@ -21,11 +22,17 @@ int main()
 {
 	initContext(800, 600, "BLACK");
 	setBackgroundColor(BLACK);
+	unsigned font = sfw::loadTextureMap("./res/fontmap.png", 16, 16);
+	srand(time(NULL));
 	Splash splash;
 	Depart depart;
 	Option options;
 	Game game;
 	GameState gs;
+
+	splash.init(font);
+	depart.init(font);
+	options.init(font);
 	
 	APP_STATE state = ENTER_SPLASH;
 
@@ -59,12 +66,21 @@ int main()
 
 			break;
 	
-		case GAME:
-				gs.draw();
-				gs.update();
-				
+		case ENTER_GAME1:
+			game.init();
+		case GAME1:
+			game.draw();
+			game.update();
+			state = game.next();
 			break;
 
+		case ENTER_GAME2:
+			gs.init();
+		case GAME2:
+			gs.draw();
+			gs.update();
+			state = gs.next();
+			break;
 
 			// Leaving the application
 		case ENTER_DEPART:
