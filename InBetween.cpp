@@ -22,13 +22,13 @@ void InBe::draw()const
 {
 
 	
-	if (p1score >= 5 || p1score > p2score)
+	if ( p1score > p2score)
 	{
 	
 		sfw::drawString(font, "right wins", 230, 360, 30, 30, 0, 0, WHITE);
 	
 	}
-	if (p2score >= 5|| p1score < p2score)
+	if (p1score < p2score)
 	{
 	
 		sfw::drawString(font, "left wins", 230, 360, 30, 30, 0, 0, WHITE);
